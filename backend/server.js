@@ -53,6 +53,16 @@ app.use('/api/approvals', approvalRoutes);
 app.use('/api/vendors', vendorRoutes);
 app.use('/api/dashboard', dashboardRoutes);
 
+app.get('/', (req, res) => {
+  res.json({
+    status: 'OK',
+    service: 'Invoice Receipt Exception Handler API',
+    version: '1.0.0',
+    message: 'Backend is running. Use /api/* endpoints.',
+    timestamp: new Date().toISOString()
+  });
+});
+
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'OK',
