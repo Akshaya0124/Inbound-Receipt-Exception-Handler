@@ -1,0 +1,46 @@
+services:
+  - type: web
+    name: inbound-receipt-exception-handler-backend
+    runtime: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: FRONTEND_URL
+        sync: false
+      - key: EMAIL_HOST
+        sync: false
+      - key: EMAIL_PORT
+        value: 587
+      - key: EMAIL_USER
+        sync: false
+      - key: EMAIL_PASS
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: SAP_BASE_URL
+        sync: false
+      - key: SAP_USERNAME
+        sync: false
+      - key: SAP_PASSWORD
+        sync: false
+      - key: SAP_CLIENT
+        sync: false
+      - key: SAP_ODATA_PATH
+        sync: false
+      - key: SAP_COMPANY_CODE
+        sync: false
+      - key: SAP_PLANT
+        sync: false
+      - key: MAX_FILE_SIZE
+        value: 10485760
